@@ -6,6 +6,16 @@ TopAPI SDK for Node.js
 
 TopAPI SDK for node.js
 
+Platform Compatibility
+-------
+Using Promise, Generator features of ES6 
+
+When using node 0.11.x or greater, you must use the --harmony-generators flag or just --harmony to get access to generators.
+
+When using node 0.10.x and lower or browsers without generator support, you must use gnode and/or regenerator.
+
+io.js is supported out of the box, you can use co without flags or polyfills.
+
 
 Install
 -------
@@ -37,6 +47,43 @@ top.taobao_items_onsale_get(params).then(
     },
     (err) => console.log(err)
 )
+```
+
+Custom Top Apis
+-----
+```js
+Top.prototype.taobao_items_onsale_get = function() {
+    let self = this;
+    let method = "taobao.items.onsale.get";
+    return new Promise((resolve, reject) => {
+        self.postAPI(method, params).then(
+            (body) => {resolve(body.items_onsale_get_response);},
+            (err) => reject(err)
+        );
+    });
+}
+```
+
+Process Control
+-----
+
+Suggest to use <a href="https://github.com/tj/co">CO</a> for process control
+
+```js
+co(function*() {
+    let param = {
+        parent_id: 0,
+        picture_category_name: "test"
+    };
+    
+    let category = yield top.taobao_picture_category_get(param);
+    
+    if (category) {
+        category = yield top.taobao_picture_category_add(param);
+    }
+    
+    return Promise.resolve(category);
+}
 ```
 
 License

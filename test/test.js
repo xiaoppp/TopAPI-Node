@@ -5,9 +5,9 @@ var should = require('should');
 describe('TOPAPI test', () => {
 
     var top = new Top({
-        appKey:"12458315",
-        appSecret: "982717aa4b8cba86a6bea2953f3fbb58",
-        sessionKey: "610250225e19d0f4b533f4df7932f273c9797bcbe5cfc2a75404940"
+        appKey:"",
+        appSecret: "",
+        sessionKey: ""
     });
 
     describe("post api test", () => {
