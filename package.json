@@ -1,0 +1,35 @@
+{
+  "name": "topapi-node",
+  "version": "0.1.1",
+  "author":{
+    "name": "xiaoppp",
+    "email": "35886282@qq.com",
+    "url": "https://github.com/xiaoppp/TopAPI-Node"
+  },
+  "description":"TopAPI SDK for node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --harmony index.js",
+    "test": "mocha --harmony"
+  },
+  "keywords": [
+    "topapi",
+    "node.js"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "dependencies": {
+    "needle": "^0.9.1",
+    "underscore": "^1.8.3",
+    "moment": "^2.10.2",
+    "crypto": "^0.0.3 "
+  },
+  "devDependencies": {
+    "should": "^5.2.0",
+    "mocha": "^1.18.2"
+  }
+}
