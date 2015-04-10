@@ -2,12 +2,13 @@
 TopAPI SDK for Node.js
 ======
 
-[![NPM](https://raw.github.com/isaacs/npm/master/html/npm-256-square.png)](https://raw.github.com/isaacs/npm/master/html/npm-256-square.png)
+Using Es6 promise, all api return promise.
 
-TopAPI SDK for node.js
+[![NPM](https://nodei.co/npm/topapi-node.png)](https://nodei.co/npm/topapi-node/)
 
 Platform Compatibility
 -------
+
 Using Promise, Generator features of ES6 
 
 When using node 0.11.x or greater, you must use the --harmony-generators flag or just --harmony to get access to generators.
