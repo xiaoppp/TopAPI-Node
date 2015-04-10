@@ -49,10 +49,15 @@ top.taobao_items_onsale_get(params).then(
 )
 ```
 
-Custom Top Apis
+Extend Top Apis
 -----
 ```js
-Top.prototype.taobao_items_onsale_get = function() {
+Since topAPI has huge APIs, and this only implements some of them, so you have two ways to extend that, both of them were fine.
+Maybe the best way is contribute your code into lib/apis file. :)
+
+First way, you can extend the TOPAPI prototype 
+
+Top.prototype.taobao_items_onsale_get = function(params) {
     let self = this;
     let method = "taobao.items.onsale.get";
     return new Promise((resolve, reject) => {
@@ -62,6 +67,22 @@ Top.prototype.taobao_items_onsale_get = function() {
         );
     });
 }
+
+Second way, postAPI to server
+
+let method = "taobao.items.onsale.get";
+
+var params = {
+    page_size: 200,
+    fields: "num_iid,title,price,pic_url,num,seller_cids,modified,list_time,has_showcase"
+}
+
+top.postAPI(method, params).then(
+    (body) => {
+        console.log(body);
+    },
+    (err) => console.log(err)
+)
 ```
 
 Process Control
