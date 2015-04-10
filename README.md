@@ -31,9 +31,9 @@ Usage
 var Top = require("topapi-node");
 
 var top = new Top({
-    appKey: config.AppKey,
-    appSecket: config.AppSecret,
-    sessionKey: config.SessionKey
+    appKey:"",
+    appSecret: "",
+    sessionKey: ""
 });
 
 var params = {
