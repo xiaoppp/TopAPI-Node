@@ -2,7 +2,7 @@
 TopAPI SDK for Node.js
 ======
 
-[![NPM](https://nodei.co/npm/needle.png)](https://nodei.co/npm/needle/)
+[![NPM](https://raw.github.com/isaacs/npm/master/html/npm-256-square.png)](https://raw.github.com/isaacs/npm/master/html/npm-256-square.png)
 
 TopAPI SDK for node.js
 
