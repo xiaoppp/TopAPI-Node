@@ -1,13 +1,13 @@
 "use strict";
 
-
-var Config = require('./lib/config');
-
-var Top = function(options) {
-    this.config = new Config(options);
+class Top {
+	constructor(options) {
+		options = options || {};
+		this.appKey = options.appKey;
+		this.appSecret = options.appSecret;
+		this.restURL = options.restURL || 'http://gw.api.taobao.com/router/rest';
+	}
 }
-
-
 
 require("./lib/postAPI")(Top.prototype);
 require("./lib/apis")(Top.prototype);

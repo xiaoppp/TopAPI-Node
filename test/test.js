@@ -4,13 +4,13 @@ var should = require('should');
 
 describe('TOPAPI test', () => {
 
-    var Top = require("../index");
+	const Top = require('./index');
+	const top = new Top({
+		appKey: "",
+		appSecret: ""
+	});
 
-    var top = new Top({
-        appKey:"",
-        appSecret: "",
-        sessionKey: ""
-    });
+	const token = '';
 
     describe("extend TOP APIs", () => {
         it('should extend top api', () => {
@@ -19,7 +19,7 @@ describe('TOPAPI test', () => {
                 let self = this;
                 let method = "taobao.items.onsale.get";
                 return new Promise((resolve, reject) => {
-                    self.postAPI(method, params).then(
+                    self.postAPI(method, token, params).then(
                         (body) => {resolve(body.items_onsale_get_response);},
                         (err) => reject(err)
                     );
@@ -31,7 +31,7 @@ describe('TOPAPI test', () => {
                 fields: "num_iid,title,price,pic_url,num,seller_cids,modified,list_time,has_showcase"
             }
 
-            top.taobao_items_onsale_get(params).then(
+            top.taobao_items_onsale_get(token, params).then(
                 (data) => {
                     data.should.not.have.length(0);
                     done();
@@ -50,7 +50,7 @@ describe('TOPAPI test', () => {
                 fields: "num_iid,title,price,pic_url,num,seller_cids,modified,list_time,has_showcase"
             }
 
-            top.postAPI(method, params).then(
+            top.postAPI(method, token, params).then(
                 (body) => {
                     console.log(body);
                     done();
@@ -68,7 +68,7 @@ describe('TOPAPI test', () => {
                 picture_category_name: "test category"
             };
 
-            top.taobao_picture_category_get(params).then(
+            top.taobao_picture_category_get(token, params).then(
                 (data) => {
                     data.should.not.have.length(0);
                     done();
@@ -85,7 +85,7 @@ describe('TOPAPI test', () => {
                 fields: "num_iid,title,price,pic_url,num,seller_cids,modified,list_time,has_showcase"
             }
 
-            top.taobao_items_onsale_get(params).then(
+            top.taobao_items_onsale_get(token, params).then(
                 (data) => {
                     data.should.not.have.length(0);
                     done();
